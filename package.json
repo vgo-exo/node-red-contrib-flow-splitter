@@ -32,6 +32,10 @@
     "flows-file-manager": "^0.2.0",
     "node-red": "^4.1.10"
   },
+  "devDependencies": {
+    "@antfu/eslint-config": "^9.0.0",
+    "eslint": "^9.19.0"
+  },
   "node-red": {
     "version": ">=4.1.10",
     "plugins": {
@@ -40,5 +44,9 @@
   },
   "engines": {
     "node": ">=18.5"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   }
 }

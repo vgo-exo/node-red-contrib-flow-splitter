@@ -4,12 +4,12 @@ const manager = require('flows-file-manager')
 const eol = require('eol')
 
 /**
- * Here we define some types to allow the IDE to provide us autocompletion.
- * Some are documented directly by the nodered team but some are not.
+ * Here we define some types to allow the IDE to provide us with autocompletion.
+ * Some are documented directly by the nodered team, but some are not.
  * 
  * That's why we also made an `index.d.ts` for undocumented types we need to manipulate.
- * Those are defined by analysing the nodered code and some logging of those object.
- * In this regard, the types defined by ourselve might be incomplete.
+ * Those are defined by analyzing the node-red code and some logging of those objects.
+ * In this regard, the types defined by ourselves might be incomplete.
  * 
  * @typedef {import('./index').noderedEvent.FlowStartedEvent} FlowStartedEventType
  * @typedef {import('./index').noderedEvent.ExtendedNodeDef} ExtendedNodeDef
@@ -18,7 +18,7 @@ const eol = require('eol')
 
 
 /**
- * Exposing the RED runtime globally to avoid passing it in every functions.
+ * Exposing the RED runtime globally to avoid passing it in every function.
  * @type {REDType}
  */
 let RED
@@ -98,7 +98,7 @@ async function onFlowReload(flowEventData) {
 
     if (flowEventData.config.flows.length == 0) {
         // The flow file registered in the package.json does not exist or is empty.
-        // The script will rebuilt the flows from the split source files and push the resulting flow file to RED runtime.
+        // The script will rebuild the flows from the split source files and push the resulting flow file to RED runtime.
 
         RED.log.info("[node-red-contrib-flow-splitter] Rebuilding monolith file from splitter config and source files")
         flowSet = manager.constructFlowSetFromTreeFiles(currentProjectSplitterCfg || DEFAULT_CFG, projectPath)
