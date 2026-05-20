@@ -40,10 +40,12 @@
         "lint": "eslint .",
         "lint:fix": "eslint . --fix"
     },
+    "peerDependencies": {
+        "node-red": ">=4.1.10"
+    },
     "dependencies": {
         "eol": "^0.10.0",
-        "flows-file-manager": "^0.2.0",
-        "node-red": "^4.1.10"
+        "flows-file-manager": "^0.2.0"
     },
     "devDependencies": {
         "@antfu/eslint-config": "^9.0.0",
