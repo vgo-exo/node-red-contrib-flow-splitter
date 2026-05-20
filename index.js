@@ -126,16 +126,19 @@ async function onFlowReload(flowEventData) {
         writeSplitterConfig(currentProjectSplitterCfg, projectPath)
 
         /**
-         * A little trick to require the same "node-red" API to give private access to our own modulesContext. (trick given in monogoto.io project)
+         * We need the *initialized* node-red instance to call `nodes.loadFlows()`.
+         * In typical Docker setups (e.g. nodered/node-red), the host runtime lives
+         * in `/usr/src/node-red/node_modules/` while plugins are installed to
+         * `/data/node_modules/`. A plain `require('node-red')` would resolve to an
+         * uninitialized copy. Instead, we look up the already-loaded red.js module
+         * from the main process's requirement cache.
          * @type {REDType}
          */
-        const PRIVATE_RED = (function requireExistingNoderedInstance() {
-            for (const child of require.main.children) {
-                if (child.filename.endsWith('red.js')) {
-                    return require(child.filename)
-                }
+        const PRIVATE_RED = (function requireInitializedNoderedInstance() {
+            const loaded = require.main.children.find(child => child.filename.endsWith('red.js'))
+            if (loaded) {
+                return require(loaded.filename)
             }
-            // In case node-red was not required before, just require it
             return require('node-red')
         })()
 
