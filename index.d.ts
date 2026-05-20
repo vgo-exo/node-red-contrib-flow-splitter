@@ -1,4 +1,4 @@
-import {NodeDef} from "@node-red/registry";
+import type { NodeDef } from '@node-red/registry'
 
 /**
  * This typings files is made to ease developpement of plugins by defining types that are not defined by the NodeRed libraries.
@@ -7,21 +7,21 @@ import {NodeDef} from "@node-red/registry";
 
 export namespace noderedEvent {
     export interface FlowStartedEvent {
-        config: FlowConfig;
-        type: "flows" | "node" | "full";
-        diff?: FlowDiff;
+        config: FlowConfig
+        type: 'flows' | 'node' | 'full'
+        diff?: FlowDiff
     }
 
     export interface FlowDiff {
-        added: [string];
-        changed: [string];
-        removed: [string];
-        rewired: [string];
-        linked: [string];
+        added: [string]
+        changed: [string]
+        removed: [string]
+        rewired: [string]
+        linked: [string]
     }
 
     export interface FlowConfig {
-        flows: [ExtendedNodeDef],
+        flows: [ExtendedNodeDef]
         rev: string
     }
 

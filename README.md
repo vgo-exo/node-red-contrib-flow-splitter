@@ -27,9 +27,9 @@ Default configuration file =
 
 ```json
 {
-  "fileFormat": "yaml",
-  "destinationFolder": "src",
-  "tabsOrder": []
+    "fileFormat": "yaml",
+    "destinationFolder": "src",
+    "tabsOrder": []
 }
 ```
 

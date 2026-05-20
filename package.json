@@ -1,52 +1,52 @@
 {
-  "name": "node-red-contrib-flow-splitter",
-  "version": "2.0.2",
-  "description": "Split your flows.json file in individual YAML or JSON files (per tab, subflow and config-node).",
-  "main": "index.js",
-  "keywords": [
-    "node-red",
-    "flows",
-    "tabs",
-    "split",
-    "splitter",
-    "flows-split",
-    "tabs-split",
-    "flow-splitter",
-    "tabs-splitter",
-    "version-control",
-    "git",
-    "diff",
-    "svn",
-    "ide",
-    "editor",
-    "code"
-  ],
-  "author": "vincent.gorisse@exotec.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vgo-exo/node-red-contrib-flow-splitter"
-  },
-  "license": "Apache-2.0",
-  "dependencies": {
-    "eol": "^0.10.0",
-    "flows-file-manager": "^0.2.0",
-    "node-red": "^4.1.10"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^9.0.0",
-    "eslint": "^9.19.0"
-  },
-  "node-red": {
-    "version": ">=4.1.10",
-    "plugins": {
-      "node-red-contrib-flow-splitter": "index.js"
+    "name": "node-red-contrib-flow-splitter",
+    "version": "2.0.2",
+    "description": "Split your flows.json file in individual YAML or JSON files (per tab, subflow and config-node).",
+    "author": "vincent.gorisse@exotec.com",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vgo-exo/node-red-contrib-flow-splitter"
+    },
+    "keywords": [
+        "node-red",
+        "flows",
+        "tabs",
+        "split",
+        "splitter",
+        "flows-split",
+        "tabs-split",
+        "flow-splitter",
+        "tabs-splitter",
+        "version-control",
+        "git",
+        "diff",
+        "svn",
+        "ide",
+        "editor",
+        "code"
+    ],
+    "main": "index.js",
+    "node-red": {
+        "version": ">=4.1.10",
+        "plugins": {
+            "node-red-contrib-flow-splitter": "index.js"
+        }
+    },
+    "engines": {
+        "node": ">=18.5"
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
+    },
+    "dependencies": {
+        "eol": "^0.10.0",
+        "flows-file-manager": "^0.2.0",
+        "node-red": "^4.1.10"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "^9.0.0",
+        "eslint": "^9.19.0"
     }
-  },
-  "engines": {
-    "node": ">=18.5"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  }
 }
